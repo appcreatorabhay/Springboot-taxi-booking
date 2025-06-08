@@ -136,8 +136,8 @@
 									
 								</div>
 								<div class="tmInput">
-									<input name="from" th:value="${bookingForm.from}" placeholder="From:" type="text" data-constraints="@NotEmpty @Required ">
-									<span style="color: red" th:if="${#fields.hasErrors('from')}" th:Errors="*{from}"></span>
+									<input name="source" th:value="${bookingForm.source}" placeholder="Source:" type="text" data-constraints="@NotEmpty @Required ">
+									<span style="color: red" th:if="${#fields.hasErrors('source')}" th:Errors="*{source}"></span>
 								
 								</div>
 							</div>
@@ -148,8 +148,8 @@
 								
 								</div>
 								<div class="tmInput mr0">
-									<input name="to" th:value="${bookingForm.to}" placeholder="To:" type="text" data-constraints="@NotEmpty @Required">
-									<span style="color: red" th:if="${#fields.hasErrors('to')}" th:Errors="*{to}"></span>
+									<input name="destination" th:value="${bookingForm.destination}" placeholder="Destination:" type="text" data-constraints="@NotEmpty @Required">
+									<span style="color: red" th:if="${#fields.hasErrors('destination')}" th:Errors="*{destination}"></span>
 								
 								</div>
 							</div>
