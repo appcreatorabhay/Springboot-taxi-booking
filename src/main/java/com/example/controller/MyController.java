@@ -16,6 +16,7 @@ import com.example.service.ContactFormService;
 import com.example.service.ContactFormServiceImpl;
 import org.apache.bcel.*;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
@@ -85,6 +86,17 @@ public class MyController {
 		return "contacts";
 	}
 
+	@GetMapping("/login")
+	public String adminLoginView(HttpServletRequest request,Model model) {
+		ServletContext servletContext=request.getServletContext();
+		Object attribute= servletContext.getAttribute("logout");
+		if(attribute instanceof Boolean) {
+			model.addAttribute("logout",attribute);
+			servletContext.removeAttribute("logout");
+		}
+		
+		return "adminlogin";
+	}
 	
 	@PostMapping("contactform")
 	public String contactForm(@Valid @ModelAttribute ContactForm contactForm, 
