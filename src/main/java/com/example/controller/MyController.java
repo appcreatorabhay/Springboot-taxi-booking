@@ -123,9 +123,11 @@ public class MyController {
 			BindingResult bindingResult, Model m, RedirectAttributes redirectAttributes) {
 		
 		if(bindingResult.hasErrors()) {
+			m.addAttribute("bookingForm", bookingForm);
 			m.addAttribute("bindingResult",bindingResult);
 			return "index";
 		}else if(bookingForm.getAdult()+bookingForm.getChildren()>4) {
+		    m.addAttribute("bookingForm", bookingForm); // ✅ ADD THIS LINE
 			m.addAttribute("message","The total no. of adult and children cannot exceed 4");
 			return "index";
 			
