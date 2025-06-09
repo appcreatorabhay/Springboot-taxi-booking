@@ -180,7 +180,7 @@
     <label for="tmRadio2">Luxury</label>
 </div>
 							<div class="clear"></div>
-							<span style="color: red" th:if="${#fields.hasErrors('adult')}" th:Errorss="*{adult}"></span>
+							<span style="color: red" th:if="${#fields.hasErrors('adult')}" th:errors="*{adult}"></span>
 							<div class="fl1 fl2">
 								<em>Adult</em>
 								<select name="adult" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
@@ -194,7 +194,7 @@
 								<div class="clear height1"></div>
 							</div>
 							<div class="fl1 fl2">
-							<span style="color: red" th:if="${#fields.hasErrors('children')}" th:Errorss="*{children}"></span>
+							<span style="color: red" th:if="${#fields.hasErrors('children')}" th:errors="*{children}"></span>
 								<em>Children</em>
 								<select name="children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
 									
@@ -209,7 +209,7 @@
 							<div class="tmTextarea">
 								<textarea name="message" th:text="${bookingForm.message}" placeholder="Message" data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
 							</div>
-							<span style="color: red" th:if="${#fields.hasErrors('message')}" th:Errorss="*{message}"></span>
+							<span style="color: red" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></span>
 							<button class="btn">Submit</button>
 						</form>
 						
